@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mowsion IoT | Professional Robot Mower App & Cloud Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Updated Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
+            scroll-behavior: smooth;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 10% 20%, rgba(190, 242, 100, 0.15) 0%, transparent 40%),
+                        radial-gradient(circle at 90% 80%, rgba(56, 189, 248, 0.1) 0%, transparent 40%);
+        }
+        .accent-color { color: #bef264; }
+        .bg-accent { background-color: #bef264; }
+        .glass {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .input-field {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .input-field:focus {
+            border-color: #bef264;
+            outline: none;
+            background: rgba(30, 41, 59, 0.8);
+        }
+        .mower-demo-screen {
+            box-shadow: 0 0 50px rgba(190, 242, 100, 0.2);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        
+        /* Icon Hover Effects */
+        .icon-box i {
+            transition: transform 0.3s ease;
+        }
+        .group:hover .icon-box i {
+            transform: scale(1.1) rotate(5deg);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-accent rounded-xl flex items-center justify-center">
+                    <i class="fa-solid fa-microchip text-slate-900 text-xl"></i>
+                </div>
+                <span class="text-2xl font-extrabold tracking-tighter uppercase">MOWSION<span class="accent-color">.</span></span>
+            </div>
+            <div class="hidden md:flex items-center gap-10 text-sm font-bold uppercase tracking-widest text-slate-400">
+                <a href="#solutions" class="hover:text-white transition-colors">Solutions</a>
+                <a href="#branding" class="hover:text-white transition-colors">Branding</a>
+                <a href="#demo" class="hover:text-white transition-colors">Live Demo</a>
+            </div>
+            <a href="#contact" class="bg-accent text-slate-900 px-6 py-2.5 rounded-full font-bold text-sm hover:scale-105 transition-transform">GET STARTED</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-48 pb-32 px-6 hero-gradient relative">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-10">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/80 border border-slate-700 text-xs font-bold text-accent">
+                    <i class="fa-solid fa-bolt-lightning"></i> SPECIALIZED ROBOT MOWER IOT PARTNER
+                </div>
+                <h1 class="text-6xl lg:text-7xl font-extrabold leading-[1.1]">
+                    The Smart Brain for Your <span class="accent-color">Mower Brand.</span>
+                </h1>
+                <p class="text-xl text-slate-400 max-w-xl leading-relaxed">
+                    Custom-built APP and IoT ecosystem for RTK and AI Vision robotic mowers. We provide the full-stack technology to launch your smart product lines worldwide.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <button onclick="document.getElementById('contact').scrollIntoView()" class="bg-accent text-slate-900 px-10 py-5 rounded-2xl font-black text-xl hover:shadow-[0_0_30px_rgba(190,242,100,0.4)] transition-all">Build My App</button>
+                    <button onclick="document.getElementById('demo').scrollIntoView()" class="px-10 py-5 rounded-2xl border border-slate-700 font-bold text-xl hover:bg-slate-800/50 transition-colors">Watch Demo</button>
+                </div>
+            </div>
+            <div class="relative hidden lg:block">
+                <div class="animate-float">
+                    <!-- APP Homepage Image -->
+                    <img src="https://drive.google.com/uc?export=view&id=1xnDXccaYPpeTAKLZyN79l6K6DhwDJjaP" alt="Mowsion App Interface" class="mower-demo-screen rounded-[3rem] border-8 border-slate-800 w-[80%] mx-auto">
+                </div>
+                <!-- Status floating cards -->
+                <div class="absolute top-20 right-0 glass p-4 rounded-2xl border-accent/20">
+                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Current Status</p>
+                    <p class="text-sm font-bold flex items-center gap-2 mt-1"><span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span> Mowing: Zone A</p>
+                </div>
+                <div class="absolute bottom-40 left-0 glass p-4 rounded-2xl border-sky-400/20">
+                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Positioning</p>
+                    <p class="text-sm font-bold flex items-center gap-2 text-sky-400 mt-1"><i class="fa-solid fa-satellite"></i> RTK Fixed (0.8cm)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities Section -->
+    <section id="solutions" class="py-24 bg-slate-900/40">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="glass p-10 rounded-[32px] border-l-4 border-l-accent group hover:bg-slate-800/40 transition-all duration-300">
+                    <div class="icon-box w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-tower-broadcast text-3xl text-accent"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-4">RTK Mastery</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">Built-in NTRIP management and centimeter-level path planning. Our algorithms ensure the mower handles complex terrains with surgical precision.</p>
+                    <ul class="space-y-3 text-sm font-semibold opacity-80">
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-accent mr-3"></i> Virtual Boundary (No Wire)</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-accent mr-3"></i> Systematic Stripe Mowing</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-accent mr-3"></i> Signal Re-acquisition Logic</li>
+                    </ul>
+                </div>
+                <div class="glass p-10 rounded-[32px] border-l-4 border-l-sky-500 group hover:bg-slate-800/40 transition-all duration-300">
+                    <div class="icon-box w-16 h-16 bg-sky-500/10 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-eye text-3xl text-sky-500"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-4">Neural AI Vision</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">Integration for V-SLAM and AI perception. Real-time obstacle classification, pet detection, and visual edge tracking for hybrid models.</p>
+                    <ul class="space-y-3 text-sm font-semibold opacity-80">
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-sky-500 mr-3"></i> Human/Pet Recognition</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-sky-500 mr-3"></i> Visual Edge Tracking</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-sky-500 mr-3"></i> Remote Video Stream (POV)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branding Section -->
+    <section id="branding" class="py-24 px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
+            <div class="lg:w-1/2 space-y-8">
+                <h2 class="text-5xl font-extrabold">Complete <br><span class="accent-color">Brand Customization</span></h2>
+                <p class="text-lg text-slate-400 leading-relaxed">We don't just provide software; we provide your digital brand identity. Launch a bespoke ecosystem that reflects your brand's unique character.</p>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-5 group">
+                        <div class="w-14 h-14 rounded-2xl bg-slate-800 flex items-center justify-center text-accent border border-white/5 group-hover:bg-accent group-hover:text-slate-900 transition-all">
+                            <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-lg">Custom UI/UX Kit</p>
+                            <p class="text-sm text-slate-500">Logo, brand colors, and icon styles tailored for your brand.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-5 group">
+                        <div class="w-14 h-14 rounded-2xl bg-slate-800 flex items-center justify-center text-accent border border-white/5 group-hover:bg-accent group-hover:text-slate-900 transition-all">
+                            <i class="fa-solid fa-cloud-arrow-up text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-lg">Branded Private Cloud</p>
+                            <p class="text-sm text-slate-500">Independent API domain and storage under your own name.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-1/2 glass p-4 rounded-[2rem] border-white/10 relative">
+                <div class="absolute -top-6 -right-6 w-24 h-24 bg-accent/20 blur-3xl rounded-full"></div>
+                <!-- Replaced with Mowsion APP Image -->
+                <img src="https://drive.google.com/uc?export=view&id=1xnDXccaYPpeTAKLZyN79l6K6DhwDJjaP" alt="Custom Branding Interface" class="rounded-2xl relative z-10 hover:scale-[1.02] transition-all duration-700 shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo Section -->
+    <section id="demo" class="py-24 bg-slate-900/40">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="inline-block px-4 py-1 rounded-full border border-accent/30 text-accent text-xs font-bold uppercase mb-4 tracking-tighter">Live Experience</div>
+                <h2 class="text-4xl font-extrabold mb-4 italic">Experience Mowsion Intelligence</h2>
+                <p class="text-slate-400">Preview the powerful dashboard available to your end-users.</p>
+            </div>
+            <div class="max-w-4xl mx-auto glass p-8 rounded-[40px] border-accent/10">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                    <button onclick="updateDemo('map')" class="py-3 rounded-xl bg-accent text-slate-900 font-bold text-[10px] md:text-xs uppercase tracking-widest demo-btn flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-map-location-dot"></i> Map Layout
+                    </button>
+                    <button onclick="updateDemo('ai')" class="py-3 rounded-xl bg-slate-800 font-bold text-[10px] md:text-xs uppercase tracking-widest demo-btn flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-robot"></i> AI View
+                    </button>
+                    <button onclick="updateDemo('data')" class="py-3 rounded-xl bg-slate-800 font-bold text-[10px] md:text-xs uppercase tracking-widest demo-btn flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-chart-line"></i> Analytics
+                    </button>
+                    <button onclick="updateDemo('fleet')" class="py-3 rounded-xl bg-slate-800 font-bold text-[10px] md:text-xs uppercase tracking-widest demo-btn flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-network-wired"></i> Fleet
+                    </button>
+                </div>
+                <div id="demo-content" class="h-96 rounded-3xl overflow-hidden relative border border-white/5">
+                    <!-- Default Image (Map) -->
+                    <img id="demo-img" src="https://drive.google.com/uc?export=view&id=1uu-FeSAdN9oRFFIci43CawVJO4tMba9A" class="w-full h-full object-cover opacity-40">
+                    <div class="absolute inset-0 flex items-center justify-center flex-col text-center p-12 bg-slate-900/40 backdrop-blur-[2px]">
+                        <h4 id="demo-title" class="text-3xl font-extrabold mb-4 tracking-tight">Smart RTK Mapping</h4>
+                        <p id="demo-text" class="text-slate-300 max-w-md">The industry's most intuitive "point-and-click" virtual boundary setup. No physical wires required.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6 relative">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 glass rounded-[3rem] overflow-hidden">
+                <div class="p-12 lg:p-20 bg-gradient-to-br from-accent/20 to-slate-900/50 space-y-8">
+                    <h2 class="text-5xl font-extrabold leading-tight">Ready to Disrupt the Industry?</h2>
+                    <p class="text-lg text-slate-400">Join top mower OEMs globally. Let's discuss your product roadmap and branding needs.</p>
+                    <div class="space-y-5 pt-4">
+                        <p class="font-bold flex items-center gap-4"><i class="fa-solid fa-paper-plane text-accent"></i> info@mowsion.com</p>
+                        <p class="font-bold flex items-center gap-4"><i class="fa-solid fa-earth-americas text-accent"></i> Global Technical Support</p>
+                        <p class="font-bold flex items-center gap-4"><i class="fa-solid fa-shield-halved text-accent"></i> ISO 27001 Certified Security</p>
+                    </div>
+                </div>
+                <div class="p-12 lg:p-20">
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-500 uppercase tracking-widest">Your Name</label>
+                            <input type="text" required class="w-full px-5 py-4 rounded-xl input-field" placeholder="John Doe">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-500 uppercase tracking-widest">Business Email</label>
+                            <input type="email" required class="w-full px-5 py-4 rounded-xl input-field" placeholder="john@company.com">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-500 uppercase tracking-widest">Product Type</label>
+                            <div class="relative">
+                                <select class="w-full px-5 py-4 rounded-xl input-field appearance-none">
+                                    <option>RTK Mower App</option>
+                                    <option>AI Vision Mower App</option>
+                                    <option>Hybrid / IoT Management</option>
+                                    <option>Brand Customization Only</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down absolute right-5 top-1/2 -translate-y-1/2 text-slate-500 text-xs pointer-events-none"></i>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-500 uppercase tracking-widest">Message</label>
+                            <textarea rows="4" class="w-full px-5 py-4 rounded-xl input-field" placeholder="Tell us about your brand..."></textarea>
+                        </div>
+                        <button type="submit" id="submitBtn" class="w-full bg-accent text-slate-900 py-5 rounded-2xl font-black text-lg hover:scale-[1.02] transition-transform shadow-[0_10px_30px_rgba(190,242,100,0.2)]">SEND INQUIRY</button>
+                    </form>
+                    <div id="successMsg" class="hidden text-center py-10 space-y-6">
+                        <div class="w-20 h-20 bg-accent rounded-full flex items-center justify-center mx-auto shadow-[0_0_40px_rgba(190,242,100,0.4)]">
+                            <i class="fa-solid fa-check text-4xl text-slate-900 animate-pulse"></i>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 class="text-2xl font-bold">Request Sent!</h3>
+                            <p class="text-slate-400">Our solution experts will contact you via info@mowsion.com within 24 hours.</p>
+                        </div>
+                        <button onclick="resetForm()" class="text-accent underline text-sm font-bold hover:text-white transition-colors">Send another message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 border-t border-white/5 text-center">
+        <div class="max-w-7xl mx-auto px-6 space-y-8">
+            <div class="flex items-center justify-center gap-3">
+                <div class="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
+                    <i class="fa-solid fa-microchip text-slate-900 text-sm"></i>
+                </div>
+                <span class="text-xl font-extrabold tracking-tighter uppercase">MOWSION<span class="accent-color">.</span></span>
+            </div>
+            <div class="flex justify-center gap-6 text-slate-500 text-xl">
+                <a href="#" class="hover:text-accent transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="hover:text-accent transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="hover:text-accent transition-colors"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <p class="text-xs text-slate-600 font-medium">The premier IoT OS for the robotic lawn care industry.<br>© 2024 Mowsion Technology. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function updateDemo(type) {
+            const img = document.getElementById('demo-img');
+            const title = document.getElementById('demo-title');
+            const text = document.getElementById('demo-text');
+            const btns = document.querySelectorAll('.demo-btn');
+            
+            btns.forEach(b => {
+                b.classList.remove('bg-accent', 'text-slate-900');
+                b.classList.add('bg-slate-800', 'text-slate-400');
+            });
+            event.currentTarget.classList.add('bg-accent', 'text-slate-900');
+
+            const content = {
+                map: {
+                    title: "Smart RTK Mapping",
+                    text: "The industry's most intuitive 'point-and-click' virtual boundary setup. No physical wires required.",
+                    img: "https://drive.google.com/uc?export=view&id=1uu-FeSAdN9oRFFIci43CawVJO4tMba9A"
+                },
+                ai: {
+                    title: "AI Vision Dashboard",
+                    text: "Neural object detection preview. Remote visual confirmation of pets, humans, and terrain hazards.",
+                    img: "https://drive.google.com/uc?export=view&id=1xnDXccaYPpeTAKLZyN79l6K6DhwDJjaP"
+                },
+                data: {
+                    title: "Intelligent Analytics",
+                    text: "Comprehensive mowing efficiency heatmaps and health monitoring of the robot's hardware components.",
+                    img: "https://drive.google.com/uc?export=view&id=1xnDXccaYPpeTAKLZyN79l6K6DhwDJjaP"
+                },
+                fleet: {
+                    title: "Enterprise Fleet Control",
+                    text: "Manage hundreds of units across different brands and regions with a centralized B2B command center.",
+                    img: "https://drive.google.com/uc?export=view&id=1Af4gTnZWbhce84uC7IAO3XP9UkhPYm_f"
+                }
+            };
+
+            title.innerText = content[type].title;
+            text.innerText = content[type].text;
+            img.src = content[type].img;
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i> SENDING...';
+            btn.disabled = true;
+
+            // Simulate form submission
+            setTimeout(() => {
+                document.getElementById('contactForm').classList.add('hidden');
+                document.getElementById('successMsg').classList.remove('hidden');
+            }, 1500);
+        }
+
+        function resetForm() {
+            document.getElementById('contactForm').classList.remove('hidden');
+            document.getElementById('successMsg').classList.add('hidden');
+            document.getElementById('submitBtn').innerText = "SEND INQUIRY";
+            document.getElementById('submitBtn').disabled = false;
+        }
+    </script>
+</body>
+</html>
